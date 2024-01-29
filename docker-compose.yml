@@ -1,0 +1,59 @@
+version: "3.9"
+services:
+  backend:
+    image: latest
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+      args:
+        - PORT=8000
+        - BUILD_CONTEXT=backend
+    restart: always
+    hostname: 0.0.0.0
+    # env_file:
+    #   - .env
+    expose:
+      - 8000
+    entrypoint: [ "python3", "backend" ]
+    ports:
+      - 8000:8000
+
+  # redis:
+  #   image: redis:6.2.7
+  #   ports:
+  #     - "6379:6379"
+  #   hostname: "redis"
+  #   volumes:
+  #     - redis:/data
+
+  # postgresql:
+  #   image: postgres:14.2-alpine
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password123
+  #     POSTGRES_DB: fastapi-db
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - ./pgdata:/var/lib/postgresql/data
+
+  # postgresql-test:
+  #   image: postgres:14.2-alpine
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password123
+  #     POSTGRES_DB: db-test
+  #   ports:
+  #     - "5431:5432"
+  #   volumes:
+  #     - ./postgresql-test:/var/lib/postgresql/data
+
+  # rabbitmq:
+  #   image: rabbitmq:3.9.7
+  #   ports:
+  #     - "5672:5672"
+  #   environment:
+  #     - RABBITMQ_DEFAULT_USER=rabbit
+  #     - RABBITMQ_DEFAULT_PASS=password
+    
+  
