@@ -36,6 +36,9 @@ You need following to run this project:
 I use [asdf](https://asdf-vm.com/#/) to manage my python versions. You can use it too. However, it is only supported on Linux and macOS. For Windows, you can use something like pyenv.
 
 Once you have installed the above and have cloned the repository, you can follow the following steps to get the project up and running:
+```bash
+cd backend
+```
 
 1. Create a virtual environment using poetry:
 
