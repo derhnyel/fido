@@ -46,7 +46,7 @@ start: ## Starts the server
 	$(eval include .env)
 	$(eval export $(sh sed 's/=.*//' .env))
 
-	poetry run python main.py
+	poetry run python .
 
 .PHONY: migrate
 migrate: ## Run the migrations
